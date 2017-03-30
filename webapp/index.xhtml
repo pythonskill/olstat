@@ -10,7 +10,10 @@
       xmlns:of="http://omnifaces.org/functions">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>olStat</title>
+
+    <title>
+        <ui:insert name="title"/>
+    </title>
 
     <!--<style>
         body {
@@ -26,19 +29,27 @@
 <h:body>
     <p:layout fullPage="true">
         <p:layoutUnit position="north" size="200" header="Left" resizable="true" collapsible="true">
-            <ui:include src="WEB-INF/views/top.xhtml"/>
+            <div id="top_panel">
+                <ui:insert name="top_panel"/>
+            </div>
         </p:layoutUnit>
 
         <p:layoutUnit position="center" size="200" header="Left" resizable="true" collapsible="true">
-            <ui:include src="WEB-INF/views/body.xhtml"/>
+            <div id="content">
+                <ui:insert name="content"/>
+            </div>
         </p:layoutUnit>
 
         <p:layoutUnit position="south" size="200" header="Left" resizable="true" collapsible="true">
-            <ui:include src="WEB-INF/views/footer.xhtml"/>
+            <div id="footer">
+                <ui:insert name="footer"/>
+            </div>
         </p:layoutUnit>
 
         <p:layoutUnit position="west" size="200" header="Left" resizable="true" collapsible="true">
-            <h:outputText value="West unit content."/>
+            <div id="left_panel">
+                <ui:insert name="left_panel"/>
+            </div>
         </p:layoutUnit>
 
     </p:layout>

@@ -4,20 +4,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<p:layout fullPage="true">
-    <p:layoutUnit position="north">
-        <ui:include src="top.xhtml"/>
-    </p:layoutUnit>
+    <title>
+        <ui:insert name="title"/>
+    </title>
 
-    <p:layoutUnit position="center">
-        <ui:include src="body.xhtml"/>
-    </p:layoutUnit>
+    <!--<style>
+        body {
+            background-image: url("#{resource['maccree.png']}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    <p:layoutUnit position="south">
-        <ui:include src="footer.xhtml"/>
-    </p:layoutUnit>
-</p:layout>
+        }
+    </style>-->
+</h:head>
+
+<h:body>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" size="200" header="Left" resizable="true" collapsible="true">
+            <div id="top_panel">
+                <ui:insert name="top_panel"/>
+            </div>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center" size="200" header="Left" resizable="true" collapsible="true">
+            <div id="content">
+                <ui:insert name="content"/>
+            </div>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="south" size="200" header="Left" resizable="true" collapsible="true">
+            <div id="footer">
+                <ui:insert name="footer"/>
+            </div>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="west" size="200" header="Left" resizable="true" collapsible="true">
+            <div id="left_panel">
+                <ui:insert name="left_panel"/>
+            </div>
+        </p:layoutUnit>
+
+    </p:layout>
+</h:body>
 </html>
