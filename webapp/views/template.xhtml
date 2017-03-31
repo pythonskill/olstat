@@ -29,26 +29,26 @@
 
 <h:body>
     <p:layout fullPage="true">
-        <p:layoutUnit position="north" size="200" header="Left" resizable="true" collapsible="true">
+        <p:layoutUnit position="north" style="margin: auto">
             <div id="top_panel">
                 <ui:insert name="top_panel"/>
             </div>
         </p:layoutUnit>
 
-        <p:layoutUnit position="center" size="200" header="Left" resizable="true" collapsible="true">
+        <p:layoutUnit position="center" size="200">
             <div id="content">
                 <ui:insert name="content"/>
             </div>
         </p:layoutUnit>
 
-        <p:layoutUnit position="south" size="40" resizable="false" collapsible="false">
+        <p:layoutUnit position="south" size="40">
             <div id="footer">
                   <ui:insert name="footer"/>
             </div>
             <ui:include src="footer.xhtml"/>
         </p:layoutUnit>
 
-        <p:layoutUnit position="west" size="200" header="Left" resizable="true" collapsible="true">
+        <p:layoutUnit position="west" size="200" header="Stats" resizable="true" collapsible="true">
             <div id="left_panel">
                 <ui:insert name="left_panel"/>
             </div>

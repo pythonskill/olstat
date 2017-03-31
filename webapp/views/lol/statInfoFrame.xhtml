@@ -1,50 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:o="http://omnifaces.org/ui"
-      xmlns:of="http://omnifaces.org/functions">
-<h:head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>olStat</title>
-</h:head>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions">
 
-<h:body style="margin-bottom:20px; width: 30%">
 
-    <p:panel id="basic" header="Input Panel">
-        <h:form>
-            <p:panelGrid columns="3">
+    <h:body style="margin-bottom:20px; width: 30%">
 
-                <o:importConstants type="com.robrua.orianna.type.core.common.Region"/>
+        <p:panel id="basic" header="Input Panel">
+            <h:form>
+                <p:panelGrid columns="3">
 
-                <p:selectOneMenu id="console" value="#{mainPageView.region}" style="width:125px">
-                    <f:selectItems value="#{Region}"/>
-                </p:selectOneMenu>
-                <p:inputText value="#{mainPageView.summonerName}" title="Введите имя призывателя"
-                             autocomplete="true"
-                             placeholder="Имя призывателя"/>
-                <p:commandButton value="Получить информацию" update="leagueInfo"
-                                 actionListener="#{mainPageView.getSummonerLeagueInfo()}"/>
+                    <o:importConstants type="com.robrua.orianna.type.core.common.Region"/>
+
+                    <p:selectOneMenu id="console" value="#{mainPageView.region}" style="width:125px">
+                        <f:selectItems value="#{Region}"/>
+                    </p:selectOneMenu>
+                    <p:inputText value="#{mainPageView.summonerName}" title="Введите имя призывателя"
+                                 autocomplete="true"
+                                 placeholder="Имя призывателя"/>
+                    <p:commandButton value="Получить информацию" update="leagueInfo"
+                                     actionListener="#{mainPageView.getSummonerLeagueInfo()}"/>
+                </p:panelGrid>
+            </h:form>
+        </p:panel>
+        <p:panel id="leagueInfo" header="Legue Info" footer="Update date:" style="margin-bottom:20px">
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Имя лиги: "/>
+                <p:outputLabel value="#{mainPageView.leagueInfo.leagueName}"/>
+
+                <p:outputLabel value="Лига: "/>
+                <p:outputLabel value="#{mainPageView.leagueInfo.leagueTierName}"/>
+
+                <p:outputLabel value="Дивизион: "/>
+                <p:outputLabel value="#{mainPageView.leagueInfo.leagueDivision}"/>
             </p:panelGrid>
-        </h:form>
-    </p:panel>
-    <p:panel id="leagueInfo" header="Legue Info" footer="Update date:" style="margin-bottom:20px">
-        <p:panelGrid columns="2">
-            <p:outputLabel value="Имя лиги: "/>
-            <p:outputLabel value="#{mainPageView.leagueInfo.leagueName}"/>
 
-            <p:outputLabel value="Лига: "/>
-            <p:outputLabel value="#{mainPageView.leagueInfo.leagueTierName}"/>
+        </p:panel>
 
-            <p:outputLabel value="Дивизион: "/>
-            <p:outputLabel value="#{mainPageView.leagueInfo.leagueDivision}"/>
-        </p:panelGrid>
-
-    </p:panel>
-
-</h:body>
-</html>
+    </h:body>
+</ui:composition>
