@@ -15,27 +15,27 @@
 
                     <o:importConstants type="com.robrua.orianna.type.core.common.Region"/>
 
-                    <p:selectOneMenu id="console" value="#{mainPageView.region}" style="width:125px">
+                    <p:selectOneMenu id="console" value="#{lolViewModel.region}" style="width:125px">
                         <f:selectItems value="#{Region}"/>
                     </p:selectOneMenu>
-                    <p:inputText value="#{mainPageView.summonerName}" title="Введите имя призывателя"
+                    <p:inputText value="#{lolViewModel.summonerName}" title="Введите имя призывателя"
                                  autocomplete="true"
                                  placeholder="Имя призывателя"/>
                     <p:commandButton value="Получить информацию" update="leagueInfo"
-                                     actionListener="#{mainPageView.getSummonerLeagueInfo()}"/>
+                                     actionListener="#{lolViewModel.getSummonerLeagueInfo()}"/>
                 </p:panelGrid>
             </h:form>
         </p:panel>
         <p:panel id="leagueInfo" header="Legue Info" footer="Update date:" style="margin-bottom:20px">
             <p:panelGrid columns="2">
                 <p:outputLabel value="Имя лиги: "/>
-                <p:outputLabel value="#{mainPageView.leagueInfo.leagueName}"/>
+                <p:outputLabel value="#{lolViewModel.leagueInfo.leagueName}"/>
 
                 <p:outputLabel value="Лига: "/>
-                <p:outputLabel value="#{mainPageView.leagueInfo.leagueTierName}"/>
+                <p:outputLabel value="#{lolViewModel.leagueInfo.leagueTierName}"/>
 
                 <p:outputLabel value="Дивизион: "/>
-                <p:outputLabel value="#{mainPageView.leagueInfo.leagueDivision}"/>
+                <p:outputLabel value="#{lolViewModel.leagueInfo.leagueDivision}"/>
             </p:panelGrid>
 
         </p:panel>

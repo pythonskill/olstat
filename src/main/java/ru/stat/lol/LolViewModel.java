@@ -1,34 +1,26 @@
-package ru.stat.viewModels;
+package ru.stat.lol;
 
 import com.robrua.orianna.type.core.common.Region;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.stat.lol.model.LeagueInfo;
-import ru.stat.lol.LolStatService;
-import ru.stat.overwatch.OvwStatService;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
-import java.io.Serializable;
 
+/**
+ * Created by aer on 02.04.17.
+ */
 @Component
 @ViewScoped
-public class MainPageView implements Serializable {
+public class LolViewModel {
 
     @Autowired
     private LolStatService lolStatService;
-
-    @Autowired
-    private OvwStatService ovwStatService;
 
     private String summonerName;
     private Region region;
     private LeagueInfo leagueInfo;
 
-
-    @PostConstruct
-    public void init() {
-    }
 
     public void getSummonerLeagueInfo() {
         leagueInfo = lolStatService.getSummonerInfo(summonerName, region);
@@ -56,13 +48,5 @@ public class MainPageView implements Serializable {
 
     public void setLeagueInfo(LeagueInfo leagueInfo) {
         this.leagueInfo = leagueInfo;
-    }
-
-    public String getOvwProfile(){
-        try {
-            return ovwStatService.getProfileInfo(" ");
-        } catch (Exception e) {
-            return e.getMessage();
-        }
     }
 }
