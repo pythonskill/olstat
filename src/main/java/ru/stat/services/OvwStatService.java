@@ -1,10 +1,11 @@
 package ru.stat.services;
 
+import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
+import ru.stat.model.overwatch.OvwProfile;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
@@ -36,7 +37,9 @@ public class OvwStatService {
         String url = "https://api.lootbox.eu/pc/eu/copper-2356/profile";
         String json = readUrl(url);
 
-        return json;
+        Gson gson = new Gson();
+        OvwProfile staff = gson.fromJson(json, OvwProfile.class);
+        return staff.getData().getLevel().toString();
     }
 
 
