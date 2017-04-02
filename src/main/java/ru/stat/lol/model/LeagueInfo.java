@@ -1,4 +1,4 @@
-package ru.stat.model;
+package ru.stat.lol.model;
 
 /**
  * Created by aer on 25.03.17.

@@ -1,19 +1,15 @@
-package ru.stat.services;
+package ru.stat.lol;
 
 import com.robrua.orianna.api.core.RiotAPI;
 import com.robrua.orianna.type.core.common.QueueType;
 import com.robrua.orianna.type.core.common.Region;
-import com.robrua.orianna.type.core.common.Season;
 import com.robrua.orianna.type.core.league.League;
-import com.robrua.orianna.type.core.stats.PlayerStatsSummary;
-import com.robrua.orianna.type.core.stats.PlayerStatsSummaryType;
 import com.robrua.orianna.type.core.summoner.Summoner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.stat.model.LeagueInfo;
+import ru.stat.lol.model.LeagueInfo;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by aer on 25.03.17.

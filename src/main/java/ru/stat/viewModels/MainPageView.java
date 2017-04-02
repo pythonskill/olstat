@@ -3,9 +3,9 @@ package ru.stat.viewModels;
 import com.robrua.orianna.type.core.common.Region;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.stat.model.LeagueInfo;
-import ru.stat.services.LolStatService;
-import ru.stat.services.OvwStatService;
+import ru.stat.lol.model.LeagueInfo;
+import ru.stat.lol.LolStatService;
+import ru.stat.overwatch.OvwStatService;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;

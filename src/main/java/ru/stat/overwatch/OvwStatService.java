@@ -1,8 +1,8 @@
-package ru.stat.services;
+package ru.stat.overwatch;
 
 import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
-import ru.stat.model.overwatch.OvwProfile;
+import ru.stat.overwatch.model.OvwProfile;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
