@@ -33,13 +33,17 @@ public class OvwStatService {
     }
 
 
-    public String getProfileInfo(String battletag) throws Exception {
-        String url = "https://api.lootbox.eu/pc/eu/copper-2356/profile";
-        String json = readUrl(url);
+
+
+
+    public OvwProfile getProfileInfo(String battletag) throws Exception {
+
+        String url = "https://api.lootbox.eu/pc/eu/%s/profile";
+        String json = readUrl(String.format(url, battletag));
 
         Gson gson = new Gson();
-        OvwProfile staff = gson.fromJson(json, OvwProfile.class);
-        return staff.getData().getLevel().toString();
+        OvwProfile ovwProfile = gson.fromJson(json, OvwProfile.class);
+        return ovwProfile;
     }
 
 

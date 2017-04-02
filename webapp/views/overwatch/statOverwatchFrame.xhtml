@@ -1,8 +1,44 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <f:view>
-        <h:outputLabel value="#{overwatchViewModel.ovwProfile}"/>
-    </f:view>
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions">
+
+    <h:body style="margin-bottom:20px; width: 30%">
+
+        <p:panel id="basic" header="Input Panel">
+            <h:form>
+                <p:panelGrid columns="3">
+
+                    <!--<o:importConstants type="com.robrua.orianna.type.core.common.Region"/>
+
+                    <p:selectOneMenu id="console" value="#{lolViewModel.region}" style="width:125px">
+                        <f:selectItems value="#{Region}"/>
+                    </p:selectOneMenu>-->
+                    <p:inputText value="#{overwatchViewModel.battleTag}" title="Введите ваш Battle Tag"
+                                 autocomplete="true"
+                                 placeholder="Battle Tag"/>
+                    <p:commandButton value="Получить информацию" update="overwatchInfo"
+                                     actionListener="#{overwatchViewModel.fillProfileInfo()}"/>
+                </p:panelGrid>
+            </h:form>
+        </p:panel>
+        <p:panel id="overwatchInfo" header="Overwatch Info" footer="Update date:" style="margin-bottom:20px">
+            <p:panelGrid columns="3">
+                <p:panelGrid columns="2" >
+                    <h:graphicImage url="#{overwatchViewModel.ovwProfile.data.avatar}" height="128px" width="128px"/>
+                    <p:outputLabel value="#{overwatchViewModel.ovwProfile.data.username}"/>
+
+                    <h:graphicImage url="#{overwatchViewModel.ovwProfile.data.competitive.rankImg}" height="128px" width="128px"/>
+                    <p:outputLabel value="#{overwatchViewModel.ovwProfile.data.competitive.rank}"/>
+
+                    <h:graphicImage url="#{overwatchViewModel.ovwProfile.data.levelFrame}" height="128px" width="128px"/>
+                    <p:outputLabel value="#{overwatchViewModel.ovwProfile.data.level}"/>
+                </p:panelGrid>
+            </p:panelGrid>
+        </p:panel>
+
+    </h:body>
 </ui:composition>
