@@ -26,7 +26,7 @@ public class OverwatchViewModel {
         try {
             ovwProfile = ovwStatService.getProfileInfo(battleTag);
         } catch (Exception e) {
-             e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
