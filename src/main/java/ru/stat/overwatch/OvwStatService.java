@@ -28,7 +28,7 @@ public class OvwStatService {
             return buffer.toString();
         } finally {
             if (reader != null)
-                reader.close();
+                 reader.close();
         }
     }
 
